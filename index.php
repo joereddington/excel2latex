@@ -36,7 +36,26 @@ Copy & paste cells from Excel and click submit. Paste results into your LaTeX do
 This is a hastly retargeted version of the very excellent Excel2Wiki tool at     <a href=\"http://excel2wiki.net/\">http://excel2wiki.net/</a>, the very awesome Shawn Douglas released the source code under the MIT licence and this modification is under the same one. However any latex related bugs are my fault and you should email me at joe@joereddington.com";
 } else {
 echo "<h2>result</h2>\n<pre>\n\begin{tabular}{|";
-$lines = preg_split("/\n/", $_POST['data']);
+$in=$_POST['data'];
+function latexSpecialChars( $string )
+{/* with thanks to http://stackoverflow.com/a/5422751/170243*/
+    $map = array( 
+            "#"=>"\\#",
+            "$"=>"\\$",
+            "%"=>"\\%",
+            "&"=>"\\&",
+            "~"=>"\\~{}",
+            "_"=>"\\_",
+            "^"=>"\\^{}",
+            "\\"=>"\\textbackslash",
+            "{"=>"\\{",
+            "}"=>"\\}",
+    );
+    return preg_replace( "/([\^\%~\\\\#\$%&_\{\}])/e", "\$map['$1']", $string );
+}
+$normalised=latexSpecialChars($in);
+
+$lines = preg_split("/\n/", $normalised);
 $n = sizeof($lines);
  $line = preg_split("/\t/", $lines[0]);
   foreach ($line as $val) {
