@@ -26,6 +26,8 @@ http://www.opensource.org/licenses/mit-license.php
 
 Repurposed by Joe Reddington from Shawn Douglas's excellent Excel2Wiki Copy and Paste Wiki Converter
 
+There is a functioning version at http://joereddington.com/excel2latex/
+
 ## Overview
 
 This script converts a tab-delimited string into a table with LaTeX markup.
