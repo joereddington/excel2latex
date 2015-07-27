@@ -22,16 +22,15 @@ THE SOFTWARE.
 
 http://www.opensource.org/licenses/mit-license.php
 
-# Excel2Wiki Copy and Paste Wiki Converter
+# Excel2Latex Copy and Paste Converter
+
+Repurposed by Joe Reddington from Shawn Douglas's excellent Excel2Wiki Copy and Paste Wiki Converter
 
 ## Overview
 
-This script converts a tab-delimited string into a table with mediawiki markup.
+This script converts a tab-delimited string into a table with LaTeX markup.
 The most common usage is likely to be copying cells from an Excel spreadsheet
-and pasting the result into a mediawiki wiki, such as wikipedia.
-
-There are two versions of the script, index.php which is includes the
-\{\{table\}\} template and wikipedia.php, which does not.
+and pasting the result into a LaTeX document
 
 ## Installation
 
